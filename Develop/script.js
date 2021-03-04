@@ -19,7 +19,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Adding prompts to ask user the complexity of password
-if (passwordlength >= 8 && passwordlength < 250 ) {
+if (passwordlength >= 8 && passwordlength <= 130) {
   // block of code to be executed if the condition is true
   console.log("Password must be more then 8 characters and less than 250");
 } else {
