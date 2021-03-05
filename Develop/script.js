@@ -2,6 +2,7 @@
 var lowercase = "abcdefghijklmnopqrstuvwxyz"
 var Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers = "1234567890"
+var specialcharacters = "!@#$%^&*()_"
 var passwordlength = ""
 
 var generateBtn = document.querySelector("#generate");
@@ -19,28 +20,22 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Adding prompts to ask user the complexity of password
-if (passwordlength >= 8 && passwordlength <= 130) {
-  // block of code to be executed if the condition is true
-  console.log("Password must be more then 8 characters and less than 250");
-} else {
-  console.log("No Password can be made")
-}
+function generatePassword() {
+  var passwordlength = prompt (
+    "Choose a length of at least 8 characters and no more than 130 characters"
+  );
 
-if (lowercase) {
-  console.log("Have lowercase letters in password")
-} else {
-  console.log("Have no lowercase letters in password")
+  if (passwordlength > 8 && passwordlength <= 130) {
+    //Pop up questions for the users
+    var lowercase = confirm("Click ok to confirm using lowercase letters in password");
+    var Uppercase = confirm("CLick ok to confirm using uppercase letters in password");
+    var numbers = confirm("Click ok to confirm using numbers in password");
+    var specialcharacters = confirm("Click ok to confirm using special characters in password");
+  } else {
+    alert(
+      //Letting user know password must be within 8-130 characters, will come up as a pop up
+      "Length of password must be at least 8 characters and less than 130 characters"
+    );
+    return "";
+  }
 }
-
-if (Uppercase) {
-  console.log("Have Uppercase letters in password")
-} else {
-  console.log("Have no Uppercase letters in password")
-}
-
-if (numbers) {
-  console.log("Have Numbers in password")
-} else {
-  console.log("Have no Numbers letters in password")
-}
-
