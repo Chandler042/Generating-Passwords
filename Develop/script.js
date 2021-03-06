@@ -13,7 +13,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
 }
 
 // Add event listener to generate button
@@ -38,4 +38,45 @@ function generatePassword() {
     );
     return "";
   }
+
+  if (lowercase || Uppercase || numbers || specialcharacters) {
+  } else {
+    alert("Must have at least 1 of the conditions");
+    return "";
+  }
+
+  var creatingPassword = [];
+
+  //Random entry of Lowercase in password
+  function getRandomLowercase() {
+   var lowercase = "abcdefghijklmnopqrstuvwxyz";
+   var holdlowercase = number1[Math.floor(Math.random() * lowercase.length)];
+    creatingPassword.push(holdlowercase);
+  }
+
+  // Random Upper case letters
+  function getRandomUppercase() {
+    var Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var holdUppercase = number1[Math.floor(Math.random() * Uowercase.length)];
+    creatingPassword.push(holdUppercase);
+  }
+
+  // Random Numbers
+  function getRandomNumbers() {
+    var numbers = "1234567890";
+    var holdnumbers = number1[Math.floor(Math.random() * numbers.length)];
+    creatingPassword.push(holdnumbers);
+  }
+
+  //Random special characters
+  function getRandomSpecial() {
+    var specialcharacters = "!@#$%^&*()_";
+    var holdspecialcharacters = number1[Math.floor(Math.random() * specialcharacters.length)];
+    creatingPassword.push(holdspecialcharacters);
+  }
+
+  creatingPassword.sort(funciton (a, b) {
+    return 1 - Math.random();
+  });
+  return creatingPassword.join("");
 }
