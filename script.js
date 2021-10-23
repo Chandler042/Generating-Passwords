@@ -25,8 +25,15 @@ function generatePassword() {
 
   //ask the user now many chars (passLength)
   var passLength = prompt(
-    "Choose a length of at least 8 characters and no more than 130 characters.", "8"
+    "Choose a length of at least 8 characters and no more than 130 characters."
   )
+
+  if (passLength >= 8 && passLength <= 126) {
+    
+  } else {
+    return window.alert("Password must be 8 through 126 characters long!"),
+    console.log("Generate Password Again!")
+  }
   //make sure the user typed in a number and not like, a word.
   //and if it is a number, make sure it is within bounds
 
